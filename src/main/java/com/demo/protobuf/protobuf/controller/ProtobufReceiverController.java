@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/demo/protobuf")
-@Slf4j
 public class ProtobufReceiverController {
 
     @PostMapping("/receive")
