@@ -13,12 +13,14 @@ import java.io.IOException;
 @Slf4j
 @RestController
 @RequestMapping("/demo/protobuf")
-public class ProtobufReceiverController {
+public class ProtobufReceiverController
+{
 
     @PostMapping("/receive")
-    public void receiveProtobuf(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            //处理数据
+    public void receiveProtobuf(HttpServletRequest request, HttpServletResponse response)
+    {
+        try
+        {
             PersonProtobuf.Person person = PersonProtobuf.Person.parseFrom(request.getInputStream());
             PersonProtobuf.Person.Builder personBuilder = PersonProtobuf.Person.newBuilder(person);
             personBuilder.setId(2);
@@ -27,7 +29,8 @@ public class ProtobufReceiverController {
             personBuilder.addPhone(PersonProtobuf.Person.PhoneNumber.newBuilder().setNumber("0987654321").setType(PersonProtobuf.Person.PhoneType.HOME));
             personBuilder.build().writeTo(response.getOutputStream());
             System.out.println(person);
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             log.error(e.getMessage());
         }
     }

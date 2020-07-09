@@ -6,8 +6,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class ProtobufClient {
-    public static void main(String[] args) throws IOException {
+public class ProtobufClient
+{
+    public static void main(String[] args) throws IOException
+    {
         PersonProtobuf.Person.Builder personRequest = PersonProtobuf.Person.newBuilder();
         personRequest.setId(1);
         personRequest.setName("jesse");
@@ -21,11 +23,6 @@ public class ProtobufClient {
         personRequest.build().writeTo(connection.getOutputStream());
 
         PersonProtobuf.Person.parseFrom(connection.getInputStream());
-//        System.out.println(personResponse.getId());
-//        System.out.println(personResponse.getName());
-//        System.out.println(personResponse.getEmail());
-//        System.out.println(personResponse.getPhone(0));
-//        System.out.println(personResponse.getPhone(1));
     }
 
 }
