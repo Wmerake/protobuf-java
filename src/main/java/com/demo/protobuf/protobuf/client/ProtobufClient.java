@@ -12,9 +12,9 @@ public class ProtobufClient
     {
         PersonProtobuf.Person.Builder personRequest = PersonProtobuf.Person.newBuilder();
         personRequest.setId(1);
-        personRequest.setName("jesse");
+        personRequest.setName("jesse-xas");
         personRequest.setEmail("xx@xx.com");
-        personRequest.addPhone(PersonProtobuf.Person.PhoneNumber.newBuilder().setNumber("1234567890").setType(PersonProtobuf.Person.PhoneType.HOME));
+        personRequest.addPhone(PersonProtobuf.Person.PhoneNumber.newBuilder().setNumber("13821113211").setType(PersonProtobuf.Person.PhoneType.HOME));
 
         //使用java原生URL连接代码生成请求并获得返回值打印
         URL url = new URL("http://localhost:8080/demo/protobuf/receive");
