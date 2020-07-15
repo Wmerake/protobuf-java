@@ -13,6 +13,7 @@ public class ProtobufClient
         PersonProtobuf.Person.Builder personRequest = PersonProtobuf.Person.newBuilder();
         personRequest.setId(1);
         personRequest.setName("jesse-xas");
+        //设置邮箱
         personRequest.setEmail("xx@xx.com");
         personRequest.addPhone(PersonProtobuf.Person.PhoneNumber.newBuilder().setNumber("13821113211").setType(PersonProtobuf.Person.PhoneType.HOME));
 
